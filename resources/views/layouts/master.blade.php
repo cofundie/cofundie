@@ -377,7 +377,7 @@
         <div class="off-canvas-content">
             <aside class="canvas-widget">
                 <div class="logo-sitebar text-center">
-                    <img src="assets/img/logos/logo.png" alt="logo">
+                    <img src="{{asset('assets/img/logos/cofundie.png')}}" alt="logo">
                 </div>
             </aside>
             <aside class="canvas-widget">
