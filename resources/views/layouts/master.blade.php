@@ -81,12 +81,12 @@
             <div class="row">
                 <div class="col-lg-4 p-md-l-100 p-sm-l-15">
                     <div class="st_footer_logo_warap">
-                        <a href="#"><img src="assets/images/logo/fotter-logo-06.png" alt=""></a>
+                        <a href="#"><img src="assets/images/logo/white-cofundie.png" height="50" width="200" alt=""></a>
                         <p>Holisticly streamline client-centric intuitive markets and a good intuitive human capital. a great place for the placing in a muse.</p>
                     </div>
                     <div class="st_copyright_content d-lg-block st-d-md-none">
-                        <p>All Right Reserved by <a class="text-white" href="#">Pixiefy</a> Copyright &copy;2018</p>
-                    </div>
+						<p>All Right Reserved by <a class="text-white" href="{{ url('/') }}">{{ config('app.name', 'COFUNDIE') }}</a> Copyright &copy; <?php echo date('Y'); ?></p>
+					</div>
                 </div>
                 <div class="col-lg-8 p-md-l-100 p-sm-l-15">
                     <div class="row">
