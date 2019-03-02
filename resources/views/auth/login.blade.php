@@ -1,73 +1,72 @@
-@extends('layouts.app')
+<!DOCTYPE html>
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">{{ __('Login') }}</div>
+<html lang="en" class="js">
 
-                <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+<head>
+    <meta charset="utf-8">
+    <title>{{ config('app.name', 'COFUNDIE') }} - Realestate Micro-investment</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:300,400,700%7CPoppins:200,300,400,500,600,700" rel="stylesheet">
+    <!--- End google font-->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!--- End favicon-->
+    <link rel="stylesheet" href="assets/css/bundle.min.css">
+    <!--End ALL STYLESHEET -->
+</head>
+
+<body>
+    <div class="st_login_page_area banner-height" style="background-image: url(assets/images/shop/bg.png);">
+        <div class="container">
+            <div class="st_login_wrap banner-height text-center">
+                <div class="st_login_container p-l-r-75 p-t-b-60">
+                    <div class="st_login_logo m-b-45">
+                        <a href="{{url('/')}}"><img src="assets/images/logo/login.png" alt=""></a>
+                        <h3 class="st-font-28 m-t-20 st-line-height-1-1 m-0"><strong>Login page</strong></h3></div>
+                    <div class="st_login_box">
+                        <form action="{{route('login')}}" method="POST">
                         @csrf
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail Address') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required autofocus>
-
-                                @if ($errors->has('email'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <div class="col-md-6 offset-md-4">
-                                <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                    <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                                    </label>
+                            <div class="st_login_form">
+                                <div class="st_login_item"><i class="fas fa-user st-font-20 text-haiti"></i>
+                                    <input class="st_login_input" type="email" placeholder="Email Address">
+                                    @if ($errors->has('email'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('email') }}</strong>
+                                        </span>
+                                    @endif
+                                </div>
+                                <div class="st_login_item"><i class="fas fa-lock st-font-20 text-haiti"></i>
+                                    <input class="st_login_input" type="password" placeholder="password">
+                                    @if ($errors->has('password'))
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $errors->first('password') }}</strong>
+                                        </span>
+                                    @endif
                                 </div>
                             </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-8 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Login') }}
-                                </button>
-
-                                @if (Route::has('password.request'))
-                                    <a class="btn btn-link" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                                @endif
-                            </div>
-                        </div>
-                    </form>
+                            <button id="st_login_btn" type="submit" value="login">LOGIN</button> 
+                            <a class="forget_password text-perison-blue font-weight-medium text-left d-block p-t-b-30" href="#">FORGET PASSWORD?</a>
+                        </form>
+                    </div>
+                    <div class="st_login_social_icon">
+                        <h3 class="st-font-24 m-b-25">Login With</h3>
+                        <ul class="list-inline m-0 m-b-30">
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-g"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                        </ul>
+                        <p class="st-font-18 font-weight-medium">New user in our site <a class="text-perison-blue" href="#"><u>Create a Account</u></a></p>
+                    </div>
                 </div>
             </div>
         </div>
+        <!--End container-->
     </div>
-</div>
-@endsection
+    <!--End st_404_area-->
+    <script src="assets/js/bundle.min.js"></script>
+    <!-- End All Js -->
+</body>
+
+</html>
+
+
