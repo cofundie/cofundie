@@ -45,7 +45,7 @@
                     <div class="row">
                         <div class="col-xl-2 col-lg-2 col-md-6 col-sm-6 col-xs-6 d-flex align-items-center">
                             <div class="st_logo">
-                                <a href="#"><img src="assets/images/logo/cofundie.png" alt="St Logo"></a>
+                                <a href="{{url('/')}}"><img src="assets/images/logo/cofundie.png" alt="St Logo"></a>
                             </div>
                         </div>
                         <div class="col-xl-10 col-lg-10 col-md-6 col-sm-6 col-xs-6 d-flex justify-content-end">
@@ -81,7 +81,7 @@
             <div class="row">
                 <div class="col-lg-4 p-md-l-100 p-sm-l-15">
                     <div class="st_footer_logo_warap">
-                        <a href="#"><img src="assets/images/logo/white-cofundie.png" height="50" width="200" alt=""></a>
+                        <a href="{{url('/')}}"><img src="assets/images/logo/white-cofundie.png" height="50" width="200" alt=""></a>
                         <p>Holisticly streamline client-centric intuitive markets and a good intuitive human capital. a great place for the placing in a muse.</p>
                     </div>
                     <div class="st_copyright_content d-lg-block st-d-md-none">

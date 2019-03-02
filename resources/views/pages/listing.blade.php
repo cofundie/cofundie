@@ -6,14 +6,14 @@
 <section class="st_breadcrumb_wrapper st_breadcrumb_3 bg-polar p-t-150 p-b-60 p-lg-t-120 p-md-t-100 p-lg-b-40">
         <div class="container">
             <div class="st_breadcrumb_content text-center">
-                <h1 class="st-font-34 st-font-lg-30 st-font-sm-24 m-md-b-10 text-haiti st-line-height-1"><strong>Shop Page</strong></h1>
-                <ul class="list-inline m-0">
+                <h1 class="st-font-34 st-font-lg-30 st-font-sm-24 m-md-b-10 text-haiti st-line-height-1"><strong>Properties</strong></h1>
+                <!-- <ul class="list-inline m-0">
                     <li><a class="text-st-aqua" href="#"><i class="fas fa-home m-r-10 text-haiti"></i>Home</a></li>
                     <li class="breadcrumb-seperator text-haiti"></li>
                     <li><a class="text-st-aqua" href="#">Page</a></li>
                     <li class="breadcrumb-seperator text-haiti"></li>
                     <li>Shop</li>
-                </ul>
+                </ul> -->
             </div>
         </div>
         <!--End container -->
