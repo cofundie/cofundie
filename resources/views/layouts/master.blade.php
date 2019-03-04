@@ -460,7 +460,7 @@
             </div>
 
             <div class="col-6 text-right">
-                <p class="small mb-0">&copy; Front. 2018 Htmlstream.</p>
+                <p class="small mb-0">&copy; Cofundie. <?php echo date('Y'); ?> All rights reserved.</p>
             </div>
         </div>
     </div>
