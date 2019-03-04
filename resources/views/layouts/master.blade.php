@@ -85,7 +85,7 @@
                 <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
                     <!-- Logo -->
                     <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="{{url('/')}}" aria-label="Front">
-						<img class="u-header__navbar-brand-default" src="{{ asset('assets/img/cofundie.png')}}" alt="Logo">
+						<img class="u-header__navbar-brand-default" src="{{ asset('assets/img/cofundie-logo.png')}}" alt="Logo">
                     </a>
                     <!-- End Logo -->
 
@@ -104,13 +104,20 @@
                             <li class="nav-item u-header__nav-item">
                                 <a class="nav-link u-header__nav-link" href="{{url('/')}}">Home</a>
                             </li>
-                            <!-- End Link -->
-
-                            
-
-                            <!-- Link -->
+							<!-- End Link -->
+							<!-- Link -->
                             <li class="nav-item u-header__nav-item">
-                                <a class="nav-link u-header__nav-link" href="companies.html">Company reviews</a>
+                                <a class="nav-link u-header__nav-link" href="{{url('/properties')}}">Properties</a>
+                            </li>
+							<!-- End Link -->
+							<!-- Link -->
+                            <li class="nav-item u-header__nav-item">
+                                <a class="nav-link u-header__nav-link" href="{{url('/properties')}}">About</a>
+                            </li>
+							<!-- End Link -->
+							<!-- Link -->
+                            <li class="nav-item u-header__nav-item">
+                                <a class="nav-link u-header__nav-link" href="{{url('/properties')}}">Contact</a>
                             </li>
                             <!-- End Link -->
 
