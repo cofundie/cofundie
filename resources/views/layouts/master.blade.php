@@ -21,6 +21,9 @@
     <link rel="stylesheet" href="{{ asset('assets/vendor/hs-megamenu/src/hs.megamenu.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/fancybox/jquery.fancybox.css')}}">
     <link rel="stylesheet" href="{{ asset('assets/vendor/slick-carousel/slick/slick.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/vendor/bootstrap-select/dist/css/bootstrap-select.min.css')}}">
+  	<link rel="stylesheet" href="{{ asset('assets/vendor/ion-rangeslider/css/ion.rangeSlider.css')}}">
+  	<link rel="stylesheet" href="{{ asset('assets/vendor/chartist/dist/chartist.min.css')}}">
 
     <!-- CSS Front Template -->
     <link rel="stylesheet" href="{{ asset('assets/css/theme.css')}}">
