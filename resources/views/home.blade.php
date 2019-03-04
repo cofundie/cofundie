@@ -3,18 +3,26 @@
 @section('content')
 
 <!-- Hero Section -->
-<div id="SVGhireUsBg" class="svg-preloader position-relative gradient-half-primary-v1">
-    <div class="container space-2">
-        <div class="row justify-content-lg-between align-items-center">
-            <div class="col-md-6 col-lg-5">
-                <h1 class="display-4 font-size-md-down-5 text-white mb-4"><strong>How can Front assistants <span class="text-warning">help</span> you?</strong></h1>
-                <p class="lead text-white-70">We'd love to talk about how we can help you.</p>
-            </div>
-            <div class="col-md-6">
-                <img class="js-svg-injector" src="{{ asset('assets/svg/contact-us.svg')}}" alt="SVG Illustration" data-parent="#SVGhireUsBg">
-            </div>
+<div id="SVGheroSectionBg" class="svg-preloader position-relative gradient-half-primary-v3">
+      <div class="container space-2 space-top-md-5 space-top-lg-4">
+        <div class="row align-items-lg-center">
+          <div class="col-lg-5 mb-7 mb-lg-0">
+            <!-- Info -->
+            <h1 class="mb-4">Investing in <span class="text-primary font-weight-semi-bold">Real Estate</span> made easy.</h1>
+            <p>Front is an easy-to-use template that is loaded with all the features you will ever need.</p>
+            <!-- End Info -->
+          </div>
+
+          <div class="col-lg-7">
+            <!-- SVG Icon -->
+            <figure class="ie-we-have-an-idea">
+              <img class="js-svg-injector" src="{{ asset('assets/svg/we-have-an-idea.svg')}}" alt="Image Description"
+                   data-parent="#SVGheroSectionBg">
+            </figure>
+            <!-- End SVG Icon -->
+          </div>
         </div>
-    </div>
+      </div>
 
     <!-- SVG Background -->
     <figure class="position-absolute right-0 bottom-0 left-0">
