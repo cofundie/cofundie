@@ -32,7 +32,9 @@
 
 <body>
     <!-- ========== HEADER ========== -->
-    <header id="header" class="u-header">
+    <header id="header" class="u-header u-header--abs-top-md  u-header--show-hide-md"
+          data-header-fix-moment="500"
+          data-header-fix-effect="slide">
         <div class="u-header__section">
             <!-- Topbar -->
             <div class="container u-header__hide-content pt-2">
@@ -82,7 +84,7 @@
                 <!-- Nav -->
                 <nav class="js-mega-menu navbar navbar-expand-md u-header__navbar u-header__navbar--no-space">
                     <!-- Logo -->
-                    <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="index.html" aria-label="Front">
+                    <a class="navbar-brand u-header__navbar-brand u-header__navbar-brand-center" href="{{url('/')}}" aria-label="Front">
 						<img class="u-header__navbar-brand-default" src="{{ asset('assets/img/cofundie.png')}}" alt="Logo">
                     </a>
                     <!-- End Logo -->
@@ -100,97 +102,11 @@
                         <ul class="navbar-nav u-header__navbar-nav">
                             <!-- Link -->
                             <li class="nav-item u-header__nav-item">
-                                <a class="nav-link u-header__nav-link" href="index.html">Find jobs</a>
+                                <a class="nav-link u-header__nav-link" href="{{url('/')}}">Home</a>
                             </li>
                             <!-- End Link -->
 
-                            <!-- Resources -->
-                            <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-max-width="760px" data-position="right">
-                                <a id="resourcesMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Resources</a>
-
-                                <!-- Resources - Submenu -->
-                                <div class="hs-mega-menu u-header__sub-menu" aria-labelledby="resourcesMegaMenu">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-6">
-                                            <!-- Promo Item -->
-                                            <div class="u-header__promo-item">
-                                                <a class="u-header__promo-link" href="job-description.html">
-                                                    <div class="media">
-                                                        <img class="js-svg-injector u-header__promo-icon" src="{{ asset('assets/svg/icons/icon-19.svg')}}" alt="SVG">
-                                                        <div class="media-body">
-                                                            <span class="u-header__promo-title mb-1">Job description</span>
-                                                            <small class="u-header__promo-text">Find out more about jobs.</small>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <!-- End Promo Item -->
-
-                                            <!-- Promo Item -->
-                                            <div class="u-header__promo-item">
-                                                <a class="u-header__promo-link" href="employee-profile.html">
-                                                    <div class="media">
-                                                        <img class="js-svg-injector u-header__promo-icon" src="{{ asset('assets/svg/icons/icon-48.svg')}}" alt="SVG">
-                                                        <div class="media-body">
-                                                            <span class="u-header__promo-title mb-1">Employee profile</span>
-                                                            <small class="u-header__promo-text">Search and compare employees.</small>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <!-- End Promo Item -->
-
-                                            <!-- Promo Item -->
-                                            <div class="u-header__promo-item">
-                                                <a class="u-header__promo-link" href="company-profile.html">
-                                                    <div class="media">
-                                                        <img class="js-svg-injector u-header__promo-icon" src="{{ asset('assets/svg/icons/icon-13.svg')}}" alt="SVG">
-                                                        <div class="media-body">
-                                                            <span class="u-header__promo-title mb-1">Company profile</span>
-                                                            <small class="u-header__promo-text">Find great places to work.</small>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <!-- End Promo Item -->
-                                        </div>
-
-                                        <!-- Promo -->
-                                        <div class="col-md-6 u-header__promo">
-                                            <div class="u-header__promo-inner">
-                                                <div class="row">
-                                                    <div class="col-sm-6">
-                                                        <!-- Sub Nav Group -->
-                                                        <span class="u-header__sub-menu-title">Jobs</span>
-                                                        <ul class="u-header__sub-menu-nav-group mb-3">
-                                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="jobs-grid.html">Grid</a></li>
-                                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="jobs-grid-side-filter.html">Grid side filter</a></li>
-                                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="jobs-list.html">Listing</a></li>
-                                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="jobs-list-side-filter.html">Listing side filter</a></li>
-                                                        </ul>
-                                                        <!-- End Sub Nav Group -->
-                                                    </div>
-
-                                                    <div class="col-sm-6">
-                                                        <!-- Sub Nav Group -->
-                                                        <span class="u-header__sub-menu-title">Freelancers</span>
-                                                        <ul class="u-header__sub-menu-nav-group">
-                                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="freelancers-grid.html">Grid</a></li>
-                                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="freelancers-grid-side-filter.html">Grid side filter</a></li>
-                                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="freelancers-list.html">Listing</a></li>
-                                                            <li><a class="nav-link u-header__sub-menu-nav-link" href="freelancers-list-side-filter.html">Listing side filter</a></li>
-                                                        </ul>
-                                                        <!-- End Sub Nav Group -->
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End Promo -->
-                                    </div>
-                                </div>
-                                <!-- End Resources - Submenu -->
-                            </li>
-                            <!-- End Resources -->
+                            
 
                             <!-- Link -->
                             <li class="nav-item u-header__nav-item">
@@ -198,143 +114,12 @@
                             </li>
                             <!-- End Link -->
 
-                            <!-- Demos -->
-                            <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-max-width="600px" data-position="right">
-                                <a id="demosMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Demos</a>
-
-                                <!-- Demos - Mega Menu -->
-                                <div class="hs-mega-menu w-100 u-header__sub-menu" aria-labelledby="demosMegaMenu">
-                                    <div class="row no-gutters">
-                                        <div class="col-md-6">
-                                            <!-- Promo Item -->
-                                            <div class="u-header__promo-item">
-                                                <a class="u-header__promo-link" href="../home/index.html">
-                                                    <div class="media align-items-center">
-                                                        <img class="js-svg-injector u-header__promo-icon" src="{{ asset('assets/svg/icons/icon-21.svg')}}" alt="SVG">
-                                                        <div class="media-body">
-                                                            <span class="u-header__promo-title">Main demo</span>
-                                                            <small class="u-header__promo-text">Main demo pages.</small>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <!-- End Promo Item -->
-
-                                            <!-- Promo Item -->
-                                            <div class="u-header__promo-item">
-                                                <a class="u-header__promo-link" href="../house/index.html">
-                                                    <div class="media align-items-center">
-                                                        <img class="js-svg-injector u-header__promo-icon" src="{{ asset('assets/svg/icons/icon-13.svg')}}" alt="SVG">
-                                                        <div class="media-body">
-                                                            <span class="u-header__promo-title">House</span>
-                                                            <small class="u-header__promo-text">Real estate demo.</small>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <!-- End Promo Item -->
-
-                                            <!-- Promo Item -->
-                                            <div class="u-header__promo-item">
-                                                <a class="u-header__promo-link" href="../crypto/index.html">
-                                                    <div class="media align-items-center">
-                                                        <img class="js-svg-injector u-header__promo-icon" src="{{ asset('assets/svg/icons/icon-5.svg')}}" alt="SVG">
-                                                        <div class="media-body">
-                                                            <span class="u-header__promo-title">Crypto landing</span>
-                                                            <small class="u-header__promo-text">Cryptocurrency demo.</small>
-                                                        </div>
-                                                    </div>
-                                                </a>
-                                            </div>
-                                            <!-- End Promo Item -->
-                                        </div>
-
-                                        <!-- Promo -->
-                                        <div class="col-md-6 u-header__promo">
-                                            <a class="d-block u-header__promo-inner" href="#">
-                                                <div class="position-relative">
-                                                    <img class="img-fluid rounded mb-3" src="{{ asset('assets/img/380x227/img6.jpg')}}" alt="Image Description">
-                                                    <span class="badge badge-success badge-pill badge-pos shadow-sm mt-3">New</span>
-                                                </div>
-                                                <span class="text-secondary font-size-1">Front makes you look at things from a different perspectives.</span>
-                                            </a>
-                                        </div>
-                                        <!-- End Promo -->
-                                    </div>
-                                </div>
-                                <!-- End Demos - Mega Menu -->
-                            </li>
-                            <!-- End Demos -->
-
-                            <!-- Docs -->
-                            <li class="nav-item hs-has-mega-menu u-header__nav-item" data-event="hover" data-animation-in="slideInUp" data-animation-out="fadeOut" data-max-width="260px" data-position="right">
-                                <a id="docsMegaMenu" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false">Docs</a>
-
-                                <!-- Docs - Submenu -->
-                                <div class="hs-mega-menu u-header__sub-menu" aria-labelledby="docsMegaMenu" style="min-width: 330px;">
-                                    <!-- Promo Item -->
-                                    <div class="u-header__promo-item">
-                                        <a class="u-header__promo-link" href="documentation/index.html">
-                                            <div class="media align-items-center">
-                                                <img class="js-svg-injector u-header__promo-icon" src="{{ asset('assets/svg/icons/icon-2.svg')}}" alt="SVG">
-                                                <div class="media-body">
-                                                    <span class="u-header__promo-title">
-                            Documentation
-                            <span class="badge badge-primary badge-pill ml-1">v2.2</span>
-                                                    </span>
-                                                    <small class="u-header__promo-text">Development guides</small>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- End Promo Item -->
-
-                                    <!-- Promo Item -->
-                                    <div class="u-header__promo-item">
-                                        <a class="u-header__promo-link" href="starter/index.html">
-                                            <div class="media align-items-center">
-                                                <img class="js-svg-injector u-header__promo-icon" src="{{ asset('assets/svg/icons/icon-1.svg')}}" alt="SVG">
-                                                <div class="media-body">
-                                                    <span class="u-header__promo-title">Get started</span>
-                                                    <small class="u-header__promo-text">Components and snippets</small>
-                                                </div>
-                                            </div>
-                                        </a>
-                                    </div>
-                                    <!-- End Promo Item -->
-
-                                    <div class="u-header__promo-footer">
-                                        <!-- List -->
-                                        <div class="row no-gutters">
-                                            <div class="col-6">
-                                                <div class="u-header__promo-footer-item">
-                                                    <small class="text-muted d-block">Check what's new</small>
-                                                    <a class="small" href="documentation/getting-started/changelog.html">
-                            Changelog
-                          </a>
-                                                </div>
-                                            </div>
-                                            <div class="col-6 u-header__promo-footer-ver-divider">
-                                                <div class="u-header__promo-footer-item">
-                                                    <small class="text-muted d-block">Have a question?</small>
-                                                    <a class="small" href="http://htmlstream.com/contact-us">
-                            Contact us
-                          </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End List -->
-                                    </div>
-                                </div>
-                                <!-- End Docs - Submenu -->
-                            </li>
-                            <!-- End Docs -->
 
                             <!-- Button -->
                             <li class="nav-item u-header__nav-last-item">
                                 <a class="btn btn-sm btn-primary transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
-                  Post Jobs
-                </a>
+									Post Jobs
+								</a>
                             </li>
                             <!-- End Button -->
                         </ul>
