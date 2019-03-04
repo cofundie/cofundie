@@ -26,7 +26,8 @@
   	<link rel="stylesheet" href="{{ asset('assets/vendor/chartist/dist/chartist.min.css')}}">
 
     <!-- CSS Front Template -->
-    <link rel="stylesheet" href="{{ asset('assets/css/theme.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/css/theme.css')}}">
+	<link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css')}}">
 </head>
 
 <body>
