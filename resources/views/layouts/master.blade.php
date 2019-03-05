@@ -194,8 +194,8 @@
 
                             <!-- Button -->
                             <li class="nav-item u-header__nav-last-item">
-                                <a class="btn btn-sm btn-primary transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">
-									Post Jobs
+                                <a class="btn btn-sm btn-primary transition-3d-hover" href="{{ route('register') }}">
+									Get Started
 								</a>
                             </li>
                             <!-- End Button -->
