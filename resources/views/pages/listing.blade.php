@@ -326,7 +326,7 @@
 <!-- List of Properties Section -->
 <div class="container space-top-1 space-bottom-2">
     <div class="row">
-        <div class="col-lg-8">
+        <div class="col-lg-12">
             <!-- Card -->
             <div class="card-deck d-block d-md-flex">
 
