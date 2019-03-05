@@ -338,13 +338,13 @@
                         <img class="card-img-top w-100" src="{{ asset('assets/img/480x320/img19.jpg')}}" alt="Image Description">
 
                         <div class="position-absolute top-0 left-0 pt-2 pl-3">
-                            <span class="badge badge-success">New</span>
+                            <span class="badge badge-success">Open</span>
                         </div>
 
                         <div class="position-absolute bottom-0 left-0 right-0 pb-2 px-3">
                             <div class="row justify-content-between align-items-center">
                                 <div class="col-8">
-                                    <h2 class="h5 text-white mb-0">$689,000</h2>
+                                    <h2 class="h5 text-white mb-0">&#x20A6; {{ number_format($prop->price)}}</h2>
                                 </div>
 
                                 <div class="col-4 text-right">
@@ -364,7 +364,7 @@
                         <!-- Location -->
                         <div class="mb-3">
                             <a class="font-size-1" href="property-description.html">
-                                <span class="fas fa-map-marker-alt mr-1"></span> Borrett Close, London SE17
+                                <h6>{{ $prop->title}}</h6>
                             </a>
                         </div>
                         <!-- End Location -->
@@ -385,9 +385,19 @@
                             </li>
                         </ul>
                         <!-- End Icon Blocks -->
+                        <ul class="list-inline font-size-1">
+                            <li class=" mr-3" title="1 bedroom">
+                                Duration: {{$prop->duration}}
+                            </li>
+                        </ul>
+                        <ul class="list-inline font-size-1">
+                            <li class=" mr-3" title="1 bedroom">
+                                ROI: {{$prop->roi}}%
+                            </li>
+                        </ul>
 
                         <!-- Posted Info -->
-                        <div class="media align-items-center border-top border-bottom py-3 mb-3">
+                        <!-- <div class="media align-items-center border-top border-bottom py-3 mb-3">
                             <div class="u-avatar mr-3">
                                 <img class="img-fluid rounded-circle" src="{{ asset('assets/img/100x100/img1.jpg')}}" alt="Image Description" title="Monica Fox">
                             </div>
@@ -395,7 +405,7 @@
                                 <small class="d-block text-muted">Listed on Jan 4, 2019 by</small>
                                 <span class="d-block">Monica Fox</span>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End Posted Info -->
 
                         <!-- Contacts -->
@@ -403,10 +413,10 @@
                             <a class="text-secondary" href="javascript:;">
                                 <span class="fas fa-star mr-1"></span> Save
                             </a>
-                            <a class="btn btn-sm btn-soft-primary transition-3d-hover ml-auto" href="property-description.html">
-                  Details
-                  <span class="fas fa-angle-right ml-1"></span>
-                </a>
+                            <a class="btn btn-sm btn-soft-primary transition-3d-hover ml-auto" href="{{url('/details/')}}/{{$prop->slug}}">
+                                Details
+                                <span class="fas fa-angle-right ml-1"></span>
+                            </a>
                         </div>
                         <!-- End Contacts -->
                     </div>
@@ -419,24 +429,7 @@
             <!-- Pagination -->
             <div class="d-flex justify-content-between align-items-center">
                 <nav aria-label="Page navigation">
-                    <ul class="pagination mb-0">
-                        <li class="page-item ml-0">
-                            <a class="page-link" href="#" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Previous</span>
-                            </a>
-                        </li>
-                        <li class="page-item active"><a class="page-link" href="#">1</a></li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item disabled"><a class="page-link" href="#">...</a></li>
-                        <li class="page-item"><a class="page-link" href="#">6</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Next</span>
-                            </a>
-                        </li>
-                    </ul>
+                {{ $properties->links() }}
                 </nav>
 
                 <small class="d-none d-sm-inline-block text-secondary">Page 1 out of 6</small>
