@@ -9,7 +9,7 @@
           <div class="col-lg-5 mb-7 mb-lg-0">
             <!-- Info -->
             <h1 class="mb-4">Investing in <span class="text-primary font-weight-semi-bold">Real Estate</span> made easy.</h1>
-            <p>Front is an easy-to-use template that is loaded with all the features you will ever need.</p>
+            <p>Cofundie makes investing in real estate easy and accessible to everyone.</p>
             <!-- End Info -->
           </div>
 
