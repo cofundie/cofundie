@@ -17,3 +17,5 @@ Auth::routes(['verify' => true]);
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::get('/properties', 'PropertiesController@listing')->name('listing');
+
+Route::get('/dashboard', 'UsersController@dashboard')->name('dashboard');
