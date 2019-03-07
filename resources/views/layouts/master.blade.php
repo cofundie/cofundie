@@ -34,7 +34,7 @@
 
 <body>
     <!-- ========== HEADER ========== -->
-    <header id="header" class="u-header u-header--abs-top-md  u-header--show-hide-md"
+    <header id="header" class="u-header "
           data-header-fix-moment="500"
           data-header-fix-effect="slide">
         <div class="u-header__section">
