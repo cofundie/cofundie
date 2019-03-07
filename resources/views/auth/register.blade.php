@@ -61,7 +61,7 @@
         <!-- Form Group -->
         <div class="js-form-message form-group">
           <label class="form-label" for="signinSrConfirmPassword">Confirm password</label>
-          <input type="password" class="form-control" name="confirmPassword" id="signinSrConfirmPassword" placeholder="********" aria-label="********" required
+          <input type="password" class="form-control" name="password_confirmation" id="signinSrConfirmPassword" placeholder="********" aria-label="********" required
                  data-msg="Password does not match the confirm password."
                  data-error-class="u-has-error"
                  data-success-class="u-has-success">

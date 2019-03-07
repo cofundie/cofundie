@@ -275,51 +275,6 @@
     </div>
     <!-- End Title -->
 
-    <div class="row align-items-center">
-        <div class="col-sm-6 mb-3 mb-sm-0">
-            <div class="d-flex align-items-center">
-                <!-- Select -->
-                <select class="js-select selectpicker dropdown-select mr-2" data-size="10" data-width="fit" data-style="btn-soft-secondary btn-xs">
-                    <option value="showing25" selected>25</option>
-                    <option value="showing10">10</option>
-                    <option value="showing20">50</option>
-                    <option value="showing30">100</option>
-                </select>
-                <!-- End Select -->
-
-                <span class="text-secondary font-size-1">Showing 1-6 of 27</span>
-            </div>
-        </div>
-
-        <div class="col-sm-6">
-            <div class="d-flex justify-content-sm-end align-items-center">
-                <!-- Select -->
-                <select class="js-select selectpicker dropdown-select mr-2" data-size="10" data-width="fit" data-style="btn-soft-secondary btn-xs">
-                    <option value="mostRecent" selected>Most recent</option>
-                    <option value="HighestPrice">Highest price</option>
-                    <option value="LowestPrice">Lowest price</option>
-                    <option value="mostReduced">Most reduced</option>
-                    <option value="mostPopular">Most popular</option>
-                </select>
-                <!-- End Select -->
-
-                <a class="btn btn-xs btn-soft-secondary mr-2" href="javascript:;">
-                    <span class="fa fa-map-marked-alt mr-1"></span> View Map
-                </a>
-
-                <!-- Button Group -->
-                <div class="btn-group btn-group-toggle d-flex">
-                    <a class="btn btn-xs btn-outline-secondary btn-custom-toggle-primary flex-fill active" href="property-grid.html">
-                        <span class="fas fa-th-large"></span>
-                    </a>
-                    <a class="btn btn-xs btn-outline-secondary btn-custom-toggle-primary flex-fill" href="property-list.html">
-                        <span class="fas fa-list"></span>
-                    </a>
-                </div>
-                <!-- End Button Group -->
-            </div>
-        </div>
-    </div>
 </div>
 <!-- End Filters Section -->
 
@@ -363,7 +318,7 @@
                     <div class="card-body p-4">
                         <!-- Location -->
                         <div class="mb-3">
-                            <a class="font-size-1" href="property-description.html">
+                            <a class="font-size-1" href="{{url('/details/')}}/{{$prop->slug}}">
                                 <h6>{{ $prop->title}}</h6>
                             </a>
                         </div>
