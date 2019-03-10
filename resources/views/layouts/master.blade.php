@@ -549,6 +549,8 @@
       $.HSCore.components.HSGoTo.init('.js-go-to');
     });
     </script>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABAaQLTeSRRn4egPXc1tRNi40scrXvcQM&callback=initMap" async defer></script>
 </body>
 
 </html>
