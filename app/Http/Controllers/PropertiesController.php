@@ -20,4 +20,10 @@ class PropertiesController extends Controller
         
         return view('pages.listing', $data);
     }
+
+    public function details($url)
+    {
+        $data['details'] = DB::table('properties')->where('slug','=', $url)->first();
+        return view('pages.details', $data);
+    }
 }
