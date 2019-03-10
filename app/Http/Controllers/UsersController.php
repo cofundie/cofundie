@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use DB;
+
+use Auth;
+
 class UsersController extends Controller
 {
     
@@ -19,6 +23,11 @@ class UsersController extends Controller
 
     public function dashboard()
     {
+
+        $id = Auth::user()->id;
+
+        
+
         return view('dashboard.dashboard');
     }
 }
