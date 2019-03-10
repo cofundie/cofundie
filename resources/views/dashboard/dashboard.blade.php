@@ -3,53 +3,7 @@
 @section('content')
 <!-- Breadcrumb Section -->
 <div class="bg-primary">
-      <div class="container space-top-1 pb-3">
-        <div class="row">
-          <div class="col-lg-5 order-lg-2 text-lg-right mb-4 mb-lg-0">
-            <div class="d-flex d-lg-inline-block justify-content-between justify-content-lg-end align-items-center align-items-lg-start">
-              <!-- Breadcrumb -->
-              <ol class="breadcrumb breadcrumb-white breadcrumb-no-gutter mb-0">
-                <li class="breadcrumb-item"><a class="breadcrumb-link" href="../home/index.html">Home</a></li>
-                <li class="breadcrumb-item"><a class="breadcrumb-link" href="dashboard.html">Account</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Dashboard</li>
-              </ol>
-              <!-- End Breadcrumb -->
-
-              <!-- Breadcrumb Nav Toggle Button -->
-              <div class="d-lg-none">
-                <button type="button" class="navbar-toggler btn u-hamburger u-hamburger--white"
-                        aria-label="Toggle navigation"
-                        aria-expanded="false"
-                        aria-controls="breadcrumbNavBar"
-                        data-toggle="collapse"
-                        data-target="#breadcrumbNavBar">
-                  <span id="breadcrumbHamburgerTrigger" class="u-hamburger__box">
-                    <span class="u-hamburger__inner"></span>
-                  </span>
-                </button>
-              </div>
-              <!-- End Breadcrumb Nav Toggle Button -->
-            </div>
-          </div>
-
-          <div class="col-lg-7 order-lg-1">
-            <!-- User Info -->
-            <div class="media d-block d-sm-flex align-items-sm-center">
-              <div class="u-lg-avatar position-relative mb-3 mb-sm-0 mr-3">
-                <img class="img-fluid rounded-circle" src="{{ asset('assets/img/160x160/img2.jpg')}}" alt="Image Description">
-                <span class="badge badge-md badge-outline-success badge-pos badge-pos--bottom-right rounded-circle">
-                  <span class="fas fa-check"></span>
-                </span>
-              </div>
-              <div class="media-body">
-                <h1 class="h3 text-white font-weight-medium mb-1">Howdy, {{ Auth::user()->name}}!</h1>
-                <span class="d-block text-white">{{ Auth::user()->email }}</span>
-              </div>
-            </div>
-            <!-- End User Info -->
-          </div>
-        </div>
-      </div>
+     @include('dashboard.nav')
 
       <div class="container space-bottom-1 space-bottom-lg-0">
         <div class="d-lg-flex justify-content-lg-between align-items-lg-center">
@@ -163,11 +117,11 @@
             <div class="card-body p-5">
               <div class="media align-items-center">
                 <span class="btn btn-lg btn-icon btn-soft-primary rounded-circle mr-4">
-                  <span class="fas fa-dollar-sign btn-icon__inner"></span>
+                  <span class="fas fa-money-bill-alt btn-icon__inner"></span>
                 </span>
                 <div class="media-body">
-                  <span class="d-block font-size-3">$45.99</span>
-                  <h2 class="h6 text-secondary font-weight-normal mb-0">Available balance</h2>
+                  <span class="d-block font-size-3">₦45.99</span>
+                  <h2 class="h6 text-secondary font-weight-normal mb-0">Expected Returns</h2>
                 </div>
               </div>
             </div>
@@ -182,7 +136,7 @@
                   <span class="fas fa-coins btn-icon__inner"></span>
                 </span>
                 <div class="media-body">
-                  <span class="d-block font-size-3">$1.32</span>
+                  <span class="d-block font-size-3">₦1.32</span>
                   <h3 class="h6 text-secondary font-weight-normal mb-0">Reward balance</h3>
                 </div>
               </div>
@@ -239,112 +193,6 @@
             </div>
             <!-- End Card -->
 
-            <!-- Card -->
-            <div class="card card-frame mb-3">
-              <a class="card-body p-4" href="#">
-                <div class="media align-items-center">
-                  <div class="u-avatar mr-3">
-                    <img class="img-fluid rounded-circle" src="../../assets/img/160x160/img3.jpg" alt="Image Description">
-                  </div>
-                  <div class="media-body">
-                    <span class="text-dark">Slack</span>
-                    <small class="d-block text-secondary">Page redesign</small>
-                  </div>
-                  <div class="media-body text-right">
-                    <span class="text-primary ml-3">
-                      $3,500
-                    </span>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card card-frame mb-3">
-              <a class="card-body p-4" href="#">
-                <div class="media align-items-center">
-                  <div class="u-avatar mr-3">
-                    <img class="img-fluid rounded-circle" src="../../assets/img/160x160/img6.jpg" alt="Image Description">
-                  </div>
-                  <div class="media-body">
-                    <span class="text-dark">Dropbox</span>
-                    <small class="d-block text-secondary">Branding</small>
-                  </div>
-                  <div class="media-body text-right">
-                    <span class="text-primary ml-3">
-                      $7,250
-                    </span>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <!-- End Card -->
-          </div>
-
-          <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
-            <!-- Card -->
-            <div class="card card-frame mb-3">
-              <a class="card-body p-4" href="#">
-                <div class="media align-items-center">
-                  <div class="u-avatar mr-3">
-                    <img class="img-fluid rounded-circle" src="../../assets/img/160x160/img8.jpg" alt="Image Description">
-                  </div>
-                  <div class="media-body">
-                    <span class="text-dark">PayPal</span>
-                    <small class="d-block text-secondary">Logo redesign</small>
-                  </div>
-                  <div class="media-body text-right">
-                    <span class="text-primary ml-3">
-                      $2,125
-                    </span>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card card-frame mb-3">
-              <a class="card-body p-4" href="#">
-                <div class="media align-items-center">
-                  <div class="u-avatar mr-3">
-                    <img class="img-fluid rounded-circle" src="../../assets/img/160x160/img9.jpg" alt="Image Description">
-                  </div>
-                  <div class="media-body">
-                    <span class="text-dark">Dribbble</span>
-                    <small class="d-block text-secondary">UI/UX</small>
-                  </div>
-                  <div class="media-body text-right">
-                    <span class="text-primary ml-3">
-                      $9,000
-                    </span>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <!-- End Card -->
-
-            <!-- Card -->
-            <div class="card card-frame mb-3">
-              <a class="card-body p-4" href="#">
-                <div class="media align-items-center">
-                  <div class="u-avatar mr-3">
-                    <img class="img-fluid rounded-circle" src="../../assets/img/160x160/img4.jpg" alt="Image Description">
-                  </div>
-                  <div class="media-body">
-                    <span class="text-dark">Mapbox</span>
-                    <small class="d-block text-secondary">Branding</small>
-                  </div>
-                  <div class="media-body text-right">
-                    <span class="text-primary ml-3">
-                      $250
-                    </span>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <!-- End Card -->
           </div>
         </div>
         <!-- End Earning Sources -->
