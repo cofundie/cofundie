@@ -503,44 +503,28 @@
                             </div>
                         </div>
                         <!-- End Header -->
+                        @guest
 
+                        <a href="{{ route('login')}}" class="btn btn-block btn-sm btn-primary btn-wide transition-3d-hover">Pay Now</a>
+
+                        @else
                         <!-- Form -->
-                        <form>
-                            <select class="custom-select custom-select-sm mb-2">
-                                <option selected>Tell me more about this property</option>
-                                <option value="aboutProperty1">Request a showing</option>
-                                <option value="aboutProperty2">Request neighborhood information</option>
-                                <option value="aboutProperty3">Request recent area sales</option>
-                            </select>
+                        <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
+                            <input type="hidden" name="email" value="{{ Auth::user()->email }}"> {{-- required --}}
+                            <input type="hidden" name="orderID" value="345">
+                            <input type="hidden" name="amount" value="{{$details->price*100}}"> {{-- required in kobo --}}
+                            <input type="hidden" name="quantity" value="3">
+                            <input type="hidden" name="metadata" value="{{ json_encode($array = ['key_name' => 'value',]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
+                            <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+                            <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
+                            {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
 
-                            <div class="mb-2">
-                                <label class="sr-only" for="firstNameSr">First Name</label>
-                                <input type="text" class="form-control form-control-sm" name="text" id="firstNameSr" placeholder="First Name" aria-label="First Name">
-                            </div>
+                            <input type="hidden" name="_token" value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
 
-                            <div class="mb-2">
-                                <label class="sr-only" for="lastNameSr">Last Name</label>
-                                <input type="text" class="form-control form-control-sm" name="text" id="lastNameSr" placeholder="Last Name" aria-label="Last Name">
-                            </div>
-
-                            <div class="mb-2">
-                                <label class="sr-only" for="emailSr">Email</label>
-                                <input type="email" class="form-control form-control-sm" name="text" id="emailSr" placeholder="Email" aria-label="Email">
-                            </div>
-
-                            <div class="mb-2">
-                                <label class="sr-only" for="phoneNumberSr">Phone number</label>
-                                <input type="tel" class="form-control form-control-sm" name="tel" id="phoneNumberSr" placeholder="Phone number" aria-label="Phone number">
-                            </div>
-
-                            <div class="mb-2">
-                                <label class="sr-only" for="propertyQuestionSr">Property question</label>
-                                <textarea class="form-control form-control-sm" rows="4" name="answer" id="propertyQuestionSr" placeholder="I would like more information about ..." aria-label="I would like more information about ..."></textarea>
-                            </div>
-
-                            <button type="button" class="btn btn-block btn-sm btn-primary btn-wide transition-3d-hover">Submit</button>
+                            <button type="submit" class="btn btn-block btn-sm btn-primary btn-wide transition-3d-hover">Pay Now</button>
                         </form>
                         <!-- End Form -->
+                        @endguest
                     </div>
                     <!-- End Contact Form -->
                 </div>

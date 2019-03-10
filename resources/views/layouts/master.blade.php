@@ -72,10 +72,10 @@
 					<div class="d-none d-sm-inline-block ml-sm-auto">
 					<ul class="list-inline mb-0">
 						<li class="list-inline-item mr-0">
-						<a class="u-header__navbar-link" href="../pages/help.html">Help</a>
+						<a class="u-header__navbar-link" href="">Help</a>
 						</li>
 						<li class="list-inline-item mr-0">
-						<a class="u-header__navbar-link" href="../pages/contacts-agency.html">Contacts</a>
+						<a class="u-header__navbar-link" href="">Buyer protection</a>
 						</li>
 					</ul>
 					</div>
@@ -83,45 +83,15 @@
 				</div>
 
 				<ul class="list-inline ml-2 mb-0">
-					<!-- Search -->
+					
+                    @guest
 					<li class="list-inline-item">
-					<a class="btn btn-xs btn-icon btn-text-secondary" href="javascript:;" role="button"
-							aria-haspopup="true"
-							aria-expanded="false"
-							aria-controls="searchPushTop"
-							data-unfold-type="jquery-slide"
-							data-unfold-target="#searchPushTop">
-						<span class="fas fa-search btn-icon__inner"></span>
-					</a>
-					</li>
-					<!-- End Search -->
-
-					<!-- Shopping Cart -->
-					<li class="list-inline-item position-relative">
-					<a id="shoppingCartDropdownInvoker" class="btn btn-xs btn-icon btn-text-secondary" href="javascript:;" role="button"
-							aria-controls="shoppingCartDropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-							data-unfold-event="hover"
-							data-unfold-target="#shoppingCartDropdown"
-							data-unfold-type="css-animation"
-							data-unfold-duration="300"
-							data-unfold-delay="300"
-							data-unfold-hide-on-scroll="true"
-							data-unfold-animation-in="slideInUp"
-							data-unfold-animation-out="fadeOut">
-						<span class="fas fa-shopping-cart btn-icon__inner"></span>
-					</a>
-
-					<div id="shoppingCartDropdown" class="dropdown-menu dropdown-unfold dropdown-menu-right text-center p-7" aria-labelledby="shoppingCartDropdownInvoker" style="min-width: 250px;">
-						<span class="btn btn-icon btn-soft-primary rounded-circle mb-3">
-						<span class="fas fa-shopping-basket btn-icon__inner"></span>
-						</span>
-						<span class="d-block">Your Cart is Empty</span>
-					</div>
-					</li>
-					<!-- End Shopping Cart -->
-
+                        <a class="u-header__navbar-link" href="{{ route('login')}}">
+                            <span class="fas fa-user-circle mr-1"></span>
+                            Sign in
+                        </a>
+                    </li>
+                    @else
 					<!-- Account Login -->
 					<li class="list-inline-item">
 					<!-- Account Sidebar Toggle Button -->
@@ -137,7 +107,7 @@
 						data-unfold-animation-out="fadeOutRight"
 						data-unfold-duration="500">
 						<span class="position-relative">
-						<span class="u-sidebar--account__toggle-text">Natalie Curtis</span>
+						<span class="u-sidebar--account__toggle-text">{{ Auth::user()->name}}</span>
 						<img class="u-sidebar--account__toggle-img" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
 						<span class="badge badge-sm badge-success badge-pos rounded-circle">3</span>
 						</span>
@@ -145,6 +115,131 @@
 					<!-- End Account Sidebar Toggle Button -->
 					</li>
 					<!-- End Account Login -->
+                        <!-- Account Sidebar Navigation -->
+                        <aside id="sidebarContent" class="u-sidebar" aria-labelledby="sidebarNavToggler">
+                            <div class="u-sidebar__scroller">
+                                <div class="u-sidebar__container">
+                                    <div class="u-sidebar--account__footer-offset">
+                                        <!-- Toggle Button -->
+                                        <div class="d-flex justify-content-between align-items-center pt-4 px-7">
+                                            <h3 class="h6 mb-0">My Account</h3>
+
+                                            <button type="button" class="close ml-auto" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent" data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight" data-unfold-duration="500">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <!-- End Toggle Button -->
+
+                                        <!-- Content -->
+                                        <div class="js-scrollbar u-sidebar__body">
+                                            <!-- Holder Info -->
+                                            <header class="d-flex align-items-center u-sidebar--account__holder mt-3">
+                                                <div class="position-relative">
+                                                    <img class="u-sidebar--account__holder-img" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
+                                                    <span class="badge badge-xs badge-outline-success badge-pos rounded-circle"></span>
+                                                </div>
+                                                <div class="ml-3">
+                                                    <span class="font-weight-semi-bold">{{ Auth::user()->name}}<span class="badge badge-success ml-1">Pro</span></span>
+                                                    <span class="u-sidebar--account__holder-text">Lead Support Adviser</span>
+                                                </div>
+
+                                                <!-- Settings -->
+                                                <div class="btn-group position-relative ml-auto mb-auto">
+                                                    <a id="sidebar-account-settings-invoker" class="btn btn-xs btn-icon btn-text-secondary rounded" href="javascript:;" role="button" aria-controls="sidebar-account-settings" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" data-unfold-event="click" data-unfold-target="#sidebar-account-settings" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
+                                                        <span class="fas fa-ellipsis-v btn-icon__inner"></span>
+                                                    </a>
+
+                                                    <div id="sidebar-account-settings" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="sidebar-account-settings-invoker">
+                                                        <a class="dropdown-item" href="#">Settings</a>
+                                                        <a class="dropdown-item" href="#">History</a>
+                                                        <div class="dropdown-divider"></div>
+                                                        <a class="dropdown-item" href="{{ route('logout') }}"
+                                                        onclick="event.preventDefault();
+                                                                        document.getElementById('logout-form').submit();">
+                                                            {{ __('Logout') }}
+                                                        </a>
+
+                                                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                                            @csrf
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                                <!-- End Settings -->
+                                            </header>
+                                            <!-- End Holder Info -->
+
+                                            <div class="u-sidebar__content--account">
+                                                <!-- List Links -->
+                                                <ul class="list-unstyled u-sidebar--account__list">
+                                                    <li class="u-sidebar--account__list-item">
+                                                        <a class="u-sidebar--account__list-link" href="dashboard.html">
+                                                            <span class="fas fa-home u-sidebar--account__list-icon mr-2"></span> Dashboard
+                                                        </a>
+                                                    </li>
+                                                    <li class="u-sidebar--account__list-item">
+                                                        <a class="u-sidebar--account__list-link" href="profile.html">
+                                                            <span class="fas fa-user-circle u-sidebar--account__list-icon mr-2"></span> Profile
+                                                        </a>
+                                                    </li>
+                                                    <li class="u-sidebar--account__list-item">
+                                                        <a class="u-sidebar--account__list-link" href="my-tasks.html">
+                                                            <span class="fas fa-tasks u-sidebar--account__list-icon mr-2"></span> My tasks
+                                                        </a>
+                                                    </li>
+                                                    <li class="u-sidebar--account__list-item">
+                                                        <a class="u-sidebar--account__list-link" href="projects.html">
+                                                            <span class="fas fa-layer-group u-sidebar--account__list-icon mr-2"></span> Projects <span class="badge badge-danger float-right mt-1">3</span>
+                                                        </a>
+                                                    </li>
+                                                    <li class="u-sidebar--account__list-item">
+                                                        <a class="u-sidebar--account__list-link" href="members.html">
+                                                            <span class="fas fa-users u-sidebar--account__list-icon mr-2"></span> Members
+                                                        </a>
+                                                    </li>
+                                                    <li class="u-sidebar--account__list-item">
+                                                        <a class="u-sidebar--account__list-link" href="activity.html">
+                                                            <span class="fas fa-exchange-alt u-sidebar--account__list-icon mr-2"></span> Activity
+                                                        </a>
+                                                    </li>
+                                                    <li class="u-sidebar--account__list-item">
+                                                        <a class="u-sidebar--account__list-link" href="payment-methods.html">
+                                                            <span class="fas fa-wallet u-sidebar--account__list-icon mr-2"></span> Payment methods
+                                                        </a>
+                                                    </li>
+                                                    <li class="u-sidebar--account__list-item">
+                                                        <a class="u-sidebar--account__list-link" href="plans.html">
+                                                            <span class="fas fa-cubes u-sidebar--account__list-icon mr-2"></span> Plans
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <!-- End List Links -->
+
+                                                <div class="u-sidebar--account__list-divider"></div>
+
+                                                <!-- List Links -->
+                                                <ul class="list-unstyled u-sidebar--account__list">
+                                                    <li class="u-sidebar--account__list-item">
+                                                        <a class="u-sidebar--account__list-link" href="invite-friends.html">
+                                                            <span class="fas fa-user-plus u-sidebar--account__list-icon mr-2"></span> Invite friends
+                                                        </a>
+                                                    </li>
+                                                    <li class="u-sidebar--account__list-item">
+                                                        <a class="u-sidebar--account__list-link" href="api-token.html">
+                                                            <span class="fas fa-key u-sidebar--account__list-icon mr-2"></span> API Token
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                                <!-- End List Links -->
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                
+                                </div>
+                            </div>
+                        </aside>
+                        <!-- End Account Sidebar Navigation -->
+                    @endguest
 				</ul>
 				</div>
 			</div>
@@ -325,122 +420,7 @@
 
 
 <!-- ========== SECONDARY CONTENTS ========== -->
-    <!-- Account Sidebar Navigation -->
-    <aside id="sidebarContent" class="u-sidebar" aria-labelledby="sidebarNavToggler">
-        <div class="u-sidebar__scroller">
-            <div class="u-sidebar__container">
-                <div class="u-sidebar--account__footer-offset">
-                    <!-- Toggle Button -->
-                    <div class="d-flex justify-content-between align-items-center pt-4 px-7">
-                        <h3 class="h6 mb-0">My Account</h3>
-
-                        <button type="button" class="close ml-auto" aria-controls="sidebarContent" aria-haspopup="true" aria-expanded="false" data-unfold-event="click" data-unfold-hide-on-scroll="false" data-unfold-target="#sidebarContent" data-unfold-type="css-animation" data-unfold-animation-in="fadeInRight" data-unfold-animation-out="fadeOutRight" data-unfold-duration="500">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <!-- End Toggle Button -->
-
-                    <!-- Content -->
-                    <div class="js-scrollbar u-sidebar__body">
-                        <!-- Holder Info -->
-                        <header class="d-flex align-items-center u-sidebar--account__holder mt-3">
-                            <div class="position-relative">
-                                <img class="u-sidebar--account__holder-img" src="../../assets/img/100x100/img1.jpg" alt="Image Description">
-                                <span class="badge badge-xs badge-outline-success badge-pos rounded-circle"></span>
-                            </div>
-                            <div class="ml-3">
-                                <span class="font-weight-semi-bold">Natalie Curtis <span class="badge badge-success ml-1">Pro</span></span>
-                                <span class="u-sidebar--account__holder-text">Lead Support Adviser</span>
-                            </div>
-
-                            <!-- Settings -->
-                            <div class="btn-group position-relative ml-auto mb-auto">
-                                <a id="sidebar-account-settings-invoker" class="btn btn-xs btn-icon btn-text-secondary rounded" href="javascript:;" role="button" aria-controls="sidebar-account-settings" aria-haspopup="true" aria-expanded="false" data-toggle="dropdown" data-unfold-event="click" data-unfold-target="#sidebar-account-settings" data-unfold-type="css-animation" data-unfold-duration="300" data-unfold-delay="300" data-unfold-animation-in="slideInUp" data-unfold-animation-out="fadeOut">
-                                    <span class="fas fa-ellipsis-v btn-icon__inner"></span>
-                                </a>
-
-                                <div id="sidebar-account-settings" class="dropdown-menu dropdown-unfold dropdown-menu-right" aria-labelledby="sidebar-account-settings-invoker">
-                                    <a class="dropdown-item" href="#">Settings</a>
-                                    <a class="dropdown-item" href="#">History</a>
-                                    <div class="dropdown-divider"></div>
-                                    <a class="dropdown-item" href="#">Sign Out</a>
-                                </div>
-                            </div>
-                            <!-- End Settings -->
-                        </header>
-                        <!-- End Holder Info -->
-
-                        <div class="u-sidebar__content--account">
-                            <!-- List Links -->
-                            <ul class="list-unstyled u-sidebar--account__list">
-                                <li class="u-sidebar--account__list-item">
-                                    <a class="u-sidebar--account__list-link" href="dashboard.html">
-                                        <span class="fas fa-home u-sidebar--account__list-icon mr-2"></span> Dashboard
-                                    </a>
-                                </li>
-                                <li class="u-sidebar--account__list-item">
-                                    <a class="u-sidebar--account__list-link" href="profile.html">
-                                        <span class="fas fa-user-circle u-sidebar--account__list-icon mr-2"></span> Profile
-                                    </a>
-                                </li>
-                                <li class="u-sidebar--account__list-item">
-                                    <a class="u-sidebar--account__list-link" href="my-tasks.html">
-                                        <span class="fas fa-tasks u-sidebar--account__list-icon mr-2"></span> My tasks
-                                    </a>
-                                </li>
-                                <li class="u-sidebar--account__list-item">
-                                    <a class="u-sidebar--account__list-link" href="projects.html">
-                                        <span class="fas fa-layer-group u-sidebar--account__list-icon mr-2"></span> Projects <span class="badge badge-danger float-right mt-1">3</span>
-                                    </a>
-                                </li>
-                                <li class="u-sidebar--account__list-item">
-                                    <a class="u-sidebar--account__list-link" href="members.html">
-                                        <span class="fas fa-users u-sidebar--account__list-icon mr-2"></span> Members
-                                    </a>
-                                </li>
-                                <li class="u-sidebar--account__list-item">
-                                    <a class="u-sidebar--account__list-link" href="activity.html">
-                                        <span class="fas fa-exchange-alt u-sidebar--account__list-icon mr-2"></span> Activity
-                                    </a>
-                                </li>
-                                <li class="u-sidebar--account__list-item">
-                                    <a class="u-sidebar--account__list-link" href="payment-methods.html">
-                                        <span class="fas fa-wallet u-sidebar--account__list-icon mr-2"></span> Payment methods
-                                    </a>
-                                </li>
-                                <li class="u-sidebar--account__list-item">
-                                    <a class="u-sidebar--account__list-link" href="plans.html">
-                                        <span class="fas fa-cubes u-sidebar--account__list-icon mr-2"></span> Plans
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- End List Links -->
-
-                            <div class="u-sidebar--account__list-divider"></div>
-
-                            <!-- List Links -->
-                            <ul class="list-unstyled u-sidebar--account__list">
-                                <li class="u-sidebar--account__list-item">
-                                    <a class="u-sidebar--account__list-link" href="invite-friends.html">
-                                        <span class="fas fa-user-plus u-sidebar--account__list-icon mr-2"></span> Invite friends
-                                    </a>
-                                </li>
-                                <li class="u-sidebar--account__list-item">
-                                    <a class="u-sidebar--account__list-link" href="api-token.html">
-                                        <span class="fas fa-key u-sidebar--account__list-icon mr-2"></span> API Token
-                                    </a>
-                                </li>
-                            </ul>
-                            <!-- End List Links -->
-                        </div>
-                    </div>
-                </div>
-
-               
-            </div>
-        </div>
-    </aside>
-    <!-- End Account Sidebar Navigation -->
+    
 
     <!-- Go to Top -->
     <a class="js-go-to u-go-to" href="#" data-position='{"bottom": 15, "right": 15 }' data-type="fixed" data-offset-top="400" data-compensation="#header" data-show-effect="slideInUp" data-hide-effect="slideOutDown">

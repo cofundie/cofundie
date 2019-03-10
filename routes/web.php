@@ -20,3 +20,8 @@ Route::get('/properties', 'PropertiesController@listing')->name('listing');
 Route::get('/details/{url}', 'PropertiesController@details')->name('explore');
 
 Route::get('/dashboard', 'UsersController@dashboard')->name('dashboard');
+
+
+/* Paystack payment urls */
+Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay'); 
+Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
