@@ -25,9 +25,13 @@ class UsersController extends Controller
     {
 
         $id = Auth::user()->id;
+        $data['properties'] = DB::table('transaction')
+                                ->Join('properties','properties.id','=','transaction.property_id')
+                                ->where('transaction.user_id','=', $id)
+                                ->paginate(3);
 
-        
-
-        return view('dashboard.dashboard');
+        $data['total'] = DB::table('transaction')->where('transaction.user_id' ,'=', $id)->sum('amount');
+    
+        return view('dashboard.dashboard', $data);
     }
 }

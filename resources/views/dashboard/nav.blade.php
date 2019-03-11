@@ -67,38 +67,13 @@
                     </li>
                     <!-- General -->
 
-                    <!-- Account Settings -->
-                    <li class="nav-item hs-has-sub-menu u-header__nav-item"
-                        data-event="hover"
-                        data-animation-in="slideInUp"
-                        data-animation-out="fadeOut">
-                      <a id="accountSettingsDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="accountSettingsDropdownMenu">
-                        Account settings
-                      </a>
+                   
 
-                      <ul id="accountSettingsDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="accountSettingsDropdown">
-                        <li><a class="nav-link u-header__sub-menu-nav-link" href="edit-profile.html">Edit profile</a></li>
-                        <li><a class="nav-link u-header__sub-menu-nav-link" href="change-password.html">Change password</a></li>
-                        <li><a class="nav-link u-header__sub-menu-nav-link" href="notifications.html">Notifications</a></li>
-                      </ul>
+                    <!-- Others -->
+                    <li class="nav-item u-header__nav-item">
+                      <a class="nav-link u-header__nav-link" href="plans.html">Properties</a>
                     </li>
-                    <!-- Account Settings -->
-
-                    <!-- Billing -->
-                    <li class="nav-item hs-has-sub-menu u-header__nav-item"
-                        data-event="hover"
-                        data-animation-in="slideInUp"
-                        data-animation-out="fadeOut">
-                      <a id="billingDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="billingDropdownMenu">
-                        Billing
-                      </a>
-
-                      <ul id="billingDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="billingDropdown">
-                        <li><a class="nav-link u-header__sub-menu-nav-link" href="activity.html">Activity</a></li>
-                        <li><a class="nav-link u-header__sub-menu-nav-link" href="payment-methods.html">Payment methods</a></li>
-                      </ul>
-                    </li>
-                    <!-- Billing -->
+                    <!-- Others -->
 
                     <!-- Accessibility -->
                     <li class="nav-item hs-has-sub-menu u-header__nav-item"
@@ -116,9 +91,26 @@
                     </li>
                     <!-- Accessibility -->
 
+                     <!-- Account Settings -->
+                     <li class="nav-item hs-has-sub-menu u-header__nav-item"
+                        data-event="hover"
+                        data-animation-in="slideInUp"
+                        data-animation-out="fadeOut">
+                      <a id="accountSettingsDropdown" class="nav-link u-header__nav-link u-header__nav-link-toggle" href="javascript:;" aria-haspopup="true" aria-expanded="false" aria-labelledby="accountSettingsDropdownMenu">
+                        Account settings
+                      </a>
+
+                      <ul id="accountSettingsDropdownMenu" class="hs-sub-menu u-header__sub-menu u-header__sub-menu--spacer" style="min-width: 230px;" aria-labelledby="accountSettingsDropdown">
+                        <li><a class="nav-link u-header__sub-menu-nav-link" href="edit-profile.html">Edit profile</a></li>
+                        <li><a class="nav-link u-header__sub-menu-nav-link" href="change-password.html">Change password</a></li>
+                        <li><a class="nav-link u-header__sub-menu-nav-link" href="notifications.html">Notifications</a></li>
+                      </ul>
+                    </li>
+                    <!-- Account Settings -->
+
                     <!-- Others -->
                     <li class="nav-item u-header__nav-item">
-                      <a class="nav-link u-header__nav-link" href="plans.html">Plans</a>
+                      <a class="nav-link u-header__nav-link" href="plans.html">Referral</a>
                     </li>
                     <!-- Others -->
                   </ul>

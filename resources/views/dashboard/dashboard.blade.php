@@ -20,7 +20,7 @@
                   <span class="fas fa-money-bill-alt btn-icon__inner"></span>
                 </span>
                 <div class="media-body">
-                  <span class="d-block font-size-3">₦45.99</span>
+                  <span class="d-block font-size-3">₦ {{number_format($total)}}</span>
                   <h2 class="h6 text-secondary font-weight-normal mb-0">Expected Returns</h2>
                 </div>
               </div>
@@ -73,24 +73,26 @@
         <div class="mb-7">
           <div class="card-deck d-block d-lg-flex card-lg-gutters-3">
             <!-- Card -->
+            @foreach($properties as $prop)
             <div class="card card-frame mb-3">
               <a class="card-body p-4" href="#">
                 <div class="media align-items-center">
-                  <div class="u-avatar mr-3">
+                  <!-- <div class="u-avatar mr-3">
                     <img class="img-fluid rounded-circle" src="../../assets/img/160x160/img5.jpg" alt="Image Description">
-                  </div>
+                  </div> -->
                   <div class="media-body">
-                    <span class="text-dark">Spotify</span>
-                    <small class="d-block text-secondary">Logo redesign</small>
+                    <span class="text-dark">{{$prop->title}}</span>
+                    <small class="d-block text-secondary">{{$prop->property_type}}</small>
                   </div>
                   <div class="media-body text-right">
                     <span class="text-primary ml-3">
-                      $1,903
+                        ₦{{ number_format($prop->amount)}}
                     </span>
                   </div>
                 </div>
               </a>
             </div>
+            @endforeach
             <!-- End Card -->
 
           </div>
