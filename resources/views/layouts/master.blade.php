@@ -453,6 +453,7 @@
     <script src="{{ asset('assets/js/components/hs.show-animation.js')}}"></script>
     <script src="{{ asset('assets/js/components/hs.svg-injector.js')}}"></script>
     <script src="{{ asset('assets/js/components/hs.go-to.js')}}"></script>
+    <script src="{{ asset('assets/js/components/hs.quantity-counter.js')}}"></script>
 
     <!-- JS Plugins Init. -->
     <script>
@@ -491,6 +492,9 @@
       // initialization of malihu scrollbar
       $.HSCore.components.HSMalihuScrollBar.init($('.js-scrollbar'));
 
+       // initialization of quantity counter
+       $.HSCore.components.HSQantityCounter.init('.js-quantity');
+
       // initialization of forms
       $.HSCore.components.HSFocusState.init();
 
@@ -514,6 +518,11 @@
       // initialization of chart pies
       var items = $.HSCore.components.HSChartPie.init('.js-pie');
 
+      
+
+       // initialization of forms
+      $.HSCore.components.HSFocusState.init();
+
       // initialization of horizontal progress bars
       var horizontalProgressBars = $.HSCore.components.HSProgressBar.init('.js-hr-progress', {
         direction: 'horizontal',
@@ -530,7 +539,6 @@
     });
     </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyABAaQLTeSRRn4egPXc1tRNi40scrXvcQM&callback=initMap" async defer></script>
 </body>
 
 </html>

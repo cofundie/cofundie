@@ -98,6 +98,35 @@
             <div class="col-lg-4 align-self-lg-end text-lg-right mb-5 mb-lg-0">
                 <span class="h3 text-primary font-weight-medium">₦{{ number_format($details->price)}}</span>
             </div>
+            <div class="col-lg-8">
+                <div class="col-md-4">
+                   
+                </div>
+                <div class="col-md-4">
+                    @guest
+
+                    <a href="{{ route('login')}}" class="btn btn-block btn-sm btn-primary btn-wide transition-3d-hover">Pay Now</a>
+
+                    @else
+                    <!-- Form -->
+                    <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
+                        <input type="hidden" name="email" value="{{ Auth::user()->email }}"> {{-- required --}}
+                        <input type="hidden" name="orderID" value="345">
+                        <input type="hidden" name="amount" value="{{$details->price*100}}"> {{-- required in kobo --}}
+                        <input type="hidden" name="quantity" value="3">
+                        <input type="hidden" name="metadata" value="{{ json_encode($array = ['key_name' => 'value',]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
+                        <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
+                        <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
+                        {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
+
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
+
+                        <button type="submit" class="btn btn-block btn-sm btn-primary btn-wide transition-3d-hover">Pay Now</button>
+                    </form>
+                    <!-- End Form -->
+                    @endguest
+                </div>
+            </div>
         </div>
         <!-- End Title -->
 
@@ -153,16 +182,16 @@
                                 <!-- Fact List -->
                                 <ul class="list-unstyled font-size-1 mb-0">
                                     <li class="d-sm-flex justify-content-sm-between py-1">
-                                        <span class="font-weight-medium">Property ID:</span>
-                                        <span class="text-secondary">HG328e91UA</span>
+                                        <span class="font-weight-medium">Property use:</span>
+                                        <span class="text-secondary">{{ $details->property_use}}</span>
                                     </li>
 
                                     <li class="d-sm-flex justify-content-sm-between py-1">
                                         <span class="font-weight-medium">Property type:</span>
-                                        <span class="text-secondary">Studio, House</span>
+                                        <span class="text-secondary">{{ $details->property_type}}</span>
                                     </li>
 
-                                    <li class="d-sm-flex justify-content-sm-between py-1">
+                                  <!--   <li class="d-sm-flex justify-content-sm-between py-1">
                                         <span class="font-weight-medium">Year built:</span>
                                         <span class="text-secondary">2015</span>
                                     </li>
@@ -170,7 +199,7 @@
                                     <li class="d-sm-flex justify-content-sm-between py-1">
                                         <span class="font-weight-medium">Lot size:</span>
                                         <span class="text-secondary">1,328 sq.m.</span>
-                                    </li>
+                                    </li> -->
                                 </ul>
                                 <!-- End Fact List -->
                             </div>
@@ -188,7 +217,7 @@
                                         <span class="text-secondary">1.5</span>
                                     </li>
 
-                                    <li class="d-sm-flex justify-content-sm-between py-1">
+                                  <!--   <li class="d-sm-flex justify-content-sm-between py-1">
                                         <span class="font-weight-medium">Kitchen:</span>
                                         <span class="text-secondary">1</span>
                                     </li>
@@ -196,7 +225,7 @@
                                     <li class="d-sm-flex justify-content-sm-between py-1">
                                         <span class="font-weight-medium">Living room:</span>
                                         <span class="text-secondary">3</span>
-                                    </li>
+                                    </li> -->
                                 </ul>
                                 <!-- End Fact List -->
                             </div>
@@ -204,7 +233,7 @@
                         <!-- End Key Facts -->
 
                         <!-- View Info -->
-                        <div class="border-top border-bottom py-4 my-6">
+                        <!-- <div class="border-top border-bottom py-4 my-6">
                             <div class="row justify-content-sm-between">
                                 <div class="col-sm-6 text-sm-right u-ver-divider u-ver-divider--none-sm mb-2 mb-sm-0">
                                     <div class="pr-md-4">
@@ -219,9 +248,9 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                         <!-- End View Info -->
-
+                        <hr class="my-6">
                         <!-- Title -->
                         <div class="mb-3">
                             <h3 class="h5">Property description</h3>
@@ -442,51 +471,8 @@
                 </div>
                 <!-- End Tab Content -->
 
-                <hr class="my-6">
+               
 
-                <!-- Title -->
-                <div class="mb-3">
-                    <h3 class="h5">Listing agents</h3>
-                </div>
-                <!-- End Title -->
-
-                <!-- Agents List -->
-                <div class="row">
-                    <div class="col-sm-6 col-md-5 mb-4 mb-sm-0">
-                        <!-- Agent -->
-                        <div class="media">
-                            <div class="u-lg-avatar mr-3">
-                                <img class="img-fluid rounded-circle" src="../../assets/img/100x100/img8.jpg" alt="Image Description">
-                            </div>
-                            <div class="media-body">
-                                <h4 class="h6 mb-1">O'Brian Cox</h4>
-                                <p class="font-size-1 mb-2">
-                                    <span class="fas fa-phone mr-1"></span> +1 416 346 8780
-                                </p>
-                                <a class="btn btn-xs btn-soft-primary" href="#">Contact agent</a>
-                            </div>
-                        </div>
-                        <!-- End Agent -->
-                    </div>
-
-                    <div class="col-sm-6 col-md-5">
-                        <!-- Agent -->
-                        <div class="media">
-                            <span class="btn btn-icon btn-lg btn-soft-danger rounded-circle mr-3">
-                  <span class="btn-icon__inner">KP</span>
-                            </span>
-                            <div class="media-body">
-                                <h4 class="h6 mb-1">Keystones Property</h4>
-                                <p class="font-size-1 mb-2">
-                                    <span class="fas fa-phone mr-1"></span> +1 822 012 3281
-                                </p>
-                                <a class="btn btn-xs btn-soft-primary" href="#">Contact agent</a>
-                            </div>
-                        </div>
-                        <!-- End Agent -->
-                    </div>
-                </div>
-                <!-- End Agents List -->
             </div>
 
             <div class="col-lg-4">
