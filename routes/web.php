@@ -25,3 +25,6 @@ Route::get('/dashboard', 'UsersController@dashboard')->name('dashboard');
 /* Paystack payment urls */
 Route::post('/pay', 'PaymentController@redirectToGateway')->name('pay'); 
 Route::get('/payment/callback', 'PaymentController@handleGatewayCallback');
+
+Route::post('/buy', 'PropertiesController@buy')->name('buy');
+Route::get('/checkout', 'PropertiesController@checkout')->name('checkout');

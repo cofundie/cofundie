@@ -6,8 +6,8 @@
         <div class="row mx-gutters-1">
             <div class="col-md-8 col-lg-6">
                 <!-- Gallery -->
-                <a class="js-fancybox u-media-viewer" href="javascript:;" data-src="{{ asset('assets/img/1920x1080/img36.jpg')}}" data-fancybox="fancyboxGallery6" data-caption="Front in frames - image #01" data-speed="700" data-is-infinite="true">
-                    <img class="img-fluid" src="{{ asset('assets/img/900x455/img1.jpg')}}" alt="Image Description">
+                <a class="js-fancybox u-media-viewer" href="javascript:;" data-src="{{url('/uploads/properties')}}/{{$image->location}}" data-fancybox="fancyboxGallery6" data-caption="Front in frames - image #01" data-speed="700" data-is-infinite="true">
+                    <img class="img-fluid" height="455" src="{{url('/uploads/properties')}}/{{$image->location}}" alt="Image Description">
 
                     <div class="position-absolute bottom-0 right-0 pb-3 pr-3">
                         <span class="d-md-none btn btn-sm btn-white">
@@ -109,18 +109,13 @@
 
                     @else
                     <!-- Form -->
-                    <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
+                    <form method="POST" action="{{ url('buy') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
+                        @csrf
                         <input type="hidden" name="email" value="{{ Auth::user()->email }}"> {{-- required --}}
-                        <input type="hidden" name="orderID" value="345">
-                        <input type="hidden" name="amount" value="{{$details->price*100}}"> {{-- required in kobo --}}
-                        <input type="hidden" name="quantity" value="3">
-                        <input type="hidden" name="metadata" value="{{ json_encode($array = ['key_name' => 'value',]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
-                        <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
-                        <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
-                        {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
-
-                        <input type="hidden" name="_token" value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
-
+                        <input type="hidden" name="property_id" value="{{$details->id}}">
+                        <input type="hidden" name="amount" value="{{$details->price}}"> {{-- required in kobo --}}
+                        <input type="hidden" name="quantity" value="1">
+                        <input type="hidden" name="roi" value="{{$details->roi}}">
                         <button type="submit" class="btn btn-block btn-sm btn-primary btn-wide transition-3d-hover">Pay Now</button>
                     </form>
                     <!-- End Form -->
@@ -495,18 +490,13 @@
 
                         @else
                         <!-- Form -->
-                        <form method="POST" action="{{ route('pay') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
+                        <form method="POST" action="{{ url('buy') }}" accept-charset="UTF-8" class="form-horizontal" role="form">
+                            @csrf
                             <input type="hidden" name="email" value="{{ Auth::user()->email }}"> {{-- required --}}
-                            <input type="hidden" name="orderID" value="345">
-                            <input type="hidden" name="amount" value="{{$details->price*100}}"> {{-- required in kobo --}}
-                            <input type="hidden" name="quantity" value="3">
-                            <input type="hidden" name="metadata" value="{{ json_encode($array = ['key_name' => 'value',]) }}" > {{-- For other necessary things you want to add to your payload. it is optional though --}}
-                            <input type="hidden" name="reference" value="{{ Paystack::genTranxRef() }}"> {{-- required --}}
-                            <input type="hidden" name="key" value="{{ config('paystack.secretKey') }}"> {{-- required --}}
-                            {{ csrf_field() }} {{-- works only when using laravel 5.1, 5.2 --}}
-
-                            <input type="hidden" name="_token" value="{{ csrf_token() }}"> {{-- employ this in place of csrf_field only in laravel 5.0 --}}
-
+                            <input type="hidden" name="property_id" value="{{$details->id}}">
+                            <input type="hidden" name="amount" value="{{$details->price}}"> {{-- required in kobo --}}
+                            <input type="hidden" name="quantity" value="1">
+                            <input type="hidden" name="roi" value="{{$details->roi}}">
                             <button type="submit" class="btn btn-block btn-sm btn-primary btn-wide transition-3d-hover">Pay Now</button>
                         </form>
                         <!-- End Form -->
