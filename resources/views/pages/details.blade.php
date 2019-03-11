@@ -116,7 +116,7 @@
                         <input type="hidden" name="amount" value="{{$details->price}}"> {{-- required in kobo --}}
                         <input type="hidden" name="quantity" value="1">
                         <input type="hidden" name="roi" value="{{$details->roi}}">
-                        <button type="submit" class="btn btn-block btn-sm btn-primary btn-wide transition-3d-hover">Pay Now</button>
+                        <button type="submit" class="btn btn-block btn-sm btn-primary btn-wide transition-3d-hover">Buy Now</button>
                     </form>
                     <!-- End Form -->
                     @endguest
@@ -252,10 +252,8 @@
                         </div>
                         <!-- End Title -->
 
-                        <p>This extremely spacious two/three bedroom duplex apartment occupies a desirable position to the South-West of Harrogate's town centre and offers a huge amount of scope to update and re-model to suit the individual including a large eaves storage room ripe for conversion into a second bathroom.</p>
-
-                        <p>Accessed via a communal hall up to the first floor, the apartment opens into a split level hall. To the front elevation there is a lovely, light and airy lounge with far reaching views towards the town centre and countryside beyond. Adjoining there is a well proportioned double bedroom with a fitted wardrobe.</p>
-
+                        <p>{{ $details->description}}</p>
+                        
                         <!-- Collapse Link - Content -->
                         <div class="collapse" id="collapseLinkExample">
                             <h4 class="h6">Directions</h4>
