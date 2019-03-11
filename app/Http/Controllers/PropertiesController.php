@@ -54,7 +54,9 @@ class PropertiesController extends Controller
     public function checkout(Request $request)
     {
         $trxn_code = $request->input('transaction_code');
+        $data['transaction_code'] = $trxn_code;
         $prop_id = $request->input('property_id');
+        $data['quantity'] = $request->input('quantity');
         $data['property'] = DB::table('properties')->where('id','=', $prop_id)->first();
         $data['trxn'] = DB::table('transaction')->where('transaction_code','=', $trxn_code)->first();
         
