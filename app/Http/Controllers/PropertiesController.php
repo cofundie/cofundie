@@ -16,7 +16,11 @@ class PropertiesController extends Controller
     //
     public function listing()
     {
-        $data['properties'] = DB::table('properties')->where('status','=', '1')->paginate(6);
+        $properties = DB::table('properties')->where('status','=', '1')->paginate(6);
+        $data['properties'] = $properties;
+        $id = $properties->id;
+
+        $data['images'] = DB::table('images')->where('p_id','=', $id)->get();
         
         return view('pages.listing', $data);
     }
