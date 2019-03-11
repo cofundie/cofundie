@@ -28,7 +28,14 @@ class PaymentController extends Controller
     {
         $paymentDetails = Paystack::getPaymentData();
 
-        dd($paymentDetails);
+        $trxn_code = $request->input('trxref');
+        $data['status'] = "1";
+
+        DB::table('transaction')
+            ->where('transaction_code', $trxn_code)
+            ->update($data);
+
+        return redirect()->route('dashboard');
         // Now you have the payment details,
         // you can store the authorization_code in your db to allow for recurrent subscriptions
         // you can then redirect or do whatever you want
