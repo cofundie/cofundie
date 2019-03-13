@@ -116,7 +116,7 @@
                         <input type="hidden" name="amount" value="{{$details->price}}"> {{-- required in kobo --}}
                         <input type="hidden" name="quantity" value="1">
                         <input type="hidden" name="roi" value="{{$details->roi}}">
-                        <button type="submit" class="btn btn-block btn-sm btn-primary btn-wide transition-3d-hover">Buy Now</button>
+                        <button type="submit" class="btn btn-block btn-sm btn-primary btn-wide transition-3d-hover">Invest Now</button>
                     </form>
                     <!-- End Form -->
                     @endguest
