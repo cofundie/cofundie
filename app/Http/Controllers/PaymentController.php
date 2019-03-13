@@ -7,6 +7,13 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Paystack;
+use App\User;
+use Hash;
+use Session;
+use Validator;
+use Illuminate\Support\Facades\Input;
+use DB;
+use Auth;
 
 class PaymentController extends Controller
 {
@@ -24,7 +31,7 @@ class PaymentController extends Controller
      * Obtain Paystack payment information
      * @return void
      */
-    public function handleGatewayCallback()
+    public function handleGatewayCallback(Request $request)
     {
         $paymentDetails = Paystack::getPaymentData();
 
