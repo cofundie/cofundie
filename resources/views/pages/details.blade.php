@@ -422,8 +422,8 @@
 
                     <div class="tab-pane fade pt-6" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
                         <!-- Gallery -->
-                        <a class="js-fancybox u-media-viewer" href="javascript:;" data-src="../../assets/img/others/img1.png" data-fancybox="fancyboxGalleryFloorPlan" data-caption="Floorplan image #01" data-speed="700" data-is-infinite="true">
-                            <img class="img-fluid" src="../../assets/img/others/img1.png" alt="Image Description">
+                        <a class="js-fancybox u-media-viewer" href="javascript:;" data-src="{{ asset('assets/img/img1.png')}}" data-fancybox="fancyboxGalleryFloorPlan" data-caption="Floorplan image #01" data-speed="700" data-is-infinite="true">
+                            <img class="img-fluid" src="{{ asset('assets/img/img1.png')}}" alt="Image Description">
                         </a>
                         <!-- End Gallery -->
 
