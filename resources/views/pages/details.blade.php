@@ -7,7 +7,7 @@
             <div class="col-md-8 col-lg-6">
                 <!-- Gallery -->
                 <a class="js-fancybox u-media-viewer" href="javascript:;" data-src="{{url('/uploads/properties')}}/{{$image->location}}" data-fancybox="fancyboxGallery6" data-caption="Front in frames - image #01" data-speed="700" data-is-infinite="true">
-                    <img class="img-fluid" height="455" src="{{url('/uploads/properties')}}/{{$image->location}}" alt="Image Description">
+                    <img class="img-fluid" height="455" src="{{url('/uploads/properties')}}/{{$image->location}}" alt="">
 
                     <div class="position-absolute bottom-0 right-0 pb-3 pr-3">
                         <span class="d-md-none btn btn-sm btn-white">

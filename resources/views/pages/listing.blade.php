@@ -290,7 +290,7 @@
                 <div class="card mb-5">
                     <!-- Gallery -->
                     <a class="js-fancybox u-media-viewer" href="javascript:;" data-src="{{ asset('assets/img/1920x1080/img36.jpg')}}" data-fancybox="fancyboxGallery1" data-caption="Front in frames - image #01" data-speed="700" data-is-infinite="true">
-                        <img class="card-img-top w-100" src="{{ asset('assets/img/480x320/img19.jpg')}}" alt="Image Description">
+                        <img class="card-img-top w-100" src="{{ url('uploads/properties') }}/{{ $prop->location}}" height="350" alt="Image Description">
 
                         <div class="position-absolute top-0 left-0 pt-2 pl-3">
                             <span class="badge badge-success">Open</span>
